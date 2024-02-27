@@ -1,4 +1,5 @@
-The reason there are multiples folders in the workshop_Two folder is because each folder has a seperate section from workshop 2.
-The reason I made them like this is for the people that weren't able to fully copy the code and wanted to see how each part of the code works.
+# Workshop 2 Folder
 
-The actual final code of the workshop two is in the "finalCode" folder! That is where we should have left off in the workshop 2!
+The reason there are multiples folders in the workshop_Two folder is because each folder has a seperate section from workshop 2. I made them the folders like this for the people that weren't able to fully copy the code and want to see how each part of the code works and be able to copy the code for demonstration.
+
+In the Images folder, it should contain the images we are going to import onto our code! The actual final code of workshop 2 is in the "finalCode" folder! That is where we should have left off in the workshop 2.
