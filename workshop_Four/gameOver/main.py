@@ -55,7 +55,7 @@ while True:
             # set interval of timer
             pygame.time.set_timer(mystery_ship, random.randint(4000, 8000))
 
-        keys = pygame.key.get_presssed()
+        keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and game.run == False:
             game.reset()
 
