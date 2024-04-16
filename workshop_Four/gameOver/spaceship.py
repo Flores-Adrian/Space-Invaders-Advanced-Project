@@ -55,9 +55,8 @@ class Spaceship(pygame.sprite.Sprite):
             self.lasers_group.add(laser)
 
             self.laser_time = pygame.time.get_ticks()
-
-
-
+            # call sound play method
+            # self.laser_sound.play()
 
     # create update method to be called for every frame and update each frame
     def update(self):
@@ -97,4 +96,3 @@ class Spaceship(pygame.sprite.Sprite):
     def reset(self):
         self.rect = self.image.get_rect(midbottom = ((self.screen_width + self.offset)/2, self.screen_height))
         self.lasers_group.empty()
-
