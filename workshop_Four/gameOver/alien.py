@@ -1,5 +1,4 @@
-import pygame
-import random
+import pygame, random
 
 class Alien(pygame.sprite.Sprite):
 
@@ -12,6 +11,10 @@ class Alien(pygame.sprite.Sprite):
         path = f"Images/alien_{type}.png"
         self.image = pygame.image.load(path)
         self.rect = self.image.get_rect(topleft = (x,y))
+
+    def update(self, direction):
+        self.rect.x += direction
+
 
 class MysteryShip(pygame.sprite.Sprite):
     def __init__(self, screen_width, offset):
@@ -40,4 +43,3 @@ class MysteryShip(pygame.sprite.Sprite):
             self.kill()
         elif self.rect.left < self.offset/2:
             self.kill()
-
