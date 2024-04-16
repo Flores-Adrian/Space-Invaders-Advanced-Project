@@ -7,8 +7,8 @@ from game import Game
 pygame.init()
 
 # create size of display screen
-SCREEN_WIDTH = 650
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 750
+SCREEN_HEIGHT = 700
 OFFSET = 50
 
 screen = pygame.display.set_mode((SCREEN_WIDTH + OFFSET, SCREEN_HEIGHT + 2*OFFSET))
@@ -34,7 +34,6 @@ mystery_ship = pygame.USEREVENT + 1
 # set timer with time interval of 4000-8000 miliseconds
 pygame.time.set_timer(mystery_ship, random.randint(4000, 8000))
 
-
 while True:
 
     for event in pygame.event.get():
@@ -45,10 +44,8 @@ while True:
             pygame.quit()
             # close program
             sys.exit()
-
         if event.type == SHOOT_LASER and game.run:
             game.alien_shoot_laser()
-
         if event.type == mystery_ship and game.run:
             # create random spaceship
             game.create_mystery_ship()
@@ -59,8 +56,6 @@ while True:
         if keys[pygame.K_SPACE] and game.run == False:
             game.reset()
 
-
-
     # UPDATE ------------------------
     # update spaceship
     if game.run:
@@ -70,9 +65,7 @@ while True:
         game.mystery_ship_group.update()
         game.check_for_collisions()
 
-
-
-
+    # give space invaders display screen color
     screen.fill(grey)
     pygame.draw.rect(screen, yellow, (10, 10, 780, 780), 2, 0, 60, 60, 60, 60)
     pygame.draw.line(screen, yellow, (25, 730), (775, 730), 3)
@@ -87,7 +80,6 @@ while True:
         screen.blit(game.spaceship_group.sprite.image, (x, 745))
         x += 50
 
-
     # DRAW ------------------------------
     # draw sprite within spaceship_group onto screen
     game.spaceship_group.draw(screen)
@@ -97,8 +89,8 @@ while True:
         obstacle.blocks_group.draw(screen)
 
     game.aliens_group.draw(screen)
+    game.alien_lasers_group.draw(screen)
     game.mystery_ship_group.draw(screen)
-
 
 
     # update display for space invaders
